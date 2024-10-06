@@ -14,10 +14,10 @@ PROFESORES=p1c2_2024_P1:profesores
 sudo groupadd $GRUPO_ALUMNO
 sudo groupadd $GRUPO_PROFESORES
 
-sudo useradd -m -s /bin/bash -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A1
-sudo useradd -m -s /bin/bash -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A2
-sudo useradd -m -s /bin/bash -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A3
-sudo useradd -m -s /bin/bash -p "$HASH" -G $GRUPO_PROFESORES p1c2_2024_P1
+sudo useradd -m -s /bin/bash -c "alumno uno" -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A1
+sudo useradd -m -s /bin/bash -c "alumno dos" -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A2
+sudo useradd -m -s /bin/bash -c "alumno tres" -p "$HASH" -G $GRUPO_ALUMNO p1c2_2024_A3
+sudo useradd -m -s /bin/bash -c "profesores" -p "$HASH" -G $GRUPO_PROFESORES p1c2_2024_P1
 
 echo "Alumnos y Profesor creados con sus respectivos grupos y contraseñas"
 
@@ -41,27 +41,28 @@ cat << EOF >> validar.txt
 
 EOF
 
-echo "Archivo validar.txt fue creado"
-
 
 
 
 USUARIOS=""
-for i in ALUMNO_UNO ALUMNO_DOS ALUMNO_TRES PROFESORES
+for i in $ALUMNO_UNO $ALUMNO_DOS $ALUMNO_TRES $PROFESORES
 do
-	SALIDA=$(sudo -su $i whoami) 
+	USUARIO=$(echo "$i" | awk -F ':' '{print $1}')
+	SALIDA=$(sudo -su $USUARIO whoami) 
     	USUARIOS+="$SALIDA "
+
 done
 
 
 
-for user in ALUMNO_UNO ALUMNO_DOS ALUMNO_TRES PROFESORES
+for user in $ALUMNO_UNO $ALUMNO_DOS $ALUMNO_TRES $PROFESORES
 do
 	CARPETA_ALUMNO=$(echo "$user" | awk -F ':' '{print $2}')
 	USUARIO=$(echo "$user" | awk -F ':' '{print $1}')
 
 	sudo -su $USUARIO bash -c "echo \"$USUARIOS\" > /Examenes-UTN/$CARPETA_ALUMNO/validar.txt"
 
+echo $USUARIOS
 done
 
 
