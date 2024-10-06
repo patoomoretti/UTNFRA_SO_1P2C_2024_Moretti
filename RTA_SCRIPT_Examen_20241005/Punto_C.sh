@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HASH=$(grep vagrant /etc/shadow | awk -F ':' '{print $2}')
+HASH=$(sudo grep vagrant /etc/shadow | awk -F ':' '{print $2}')
 DIR=/home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/RTA_ARCHIVOS_Examen_20241005/validar.txt
 GRUPO_ALUMNO=p1c2_2024_gAlumno
 GRUPO_PROFESORES=p1c2_2024_gProfesores
