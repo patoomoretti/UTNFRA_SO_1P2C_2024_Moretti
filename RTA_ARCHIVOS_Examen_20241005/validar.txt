@@ -1,0 +1,6 @@
+
+sudo -su -c "whoami > /Examenes-UTN/alumnos_1/validar1.txt" p1c2_2024_A1
+sudo -su -c "whoami > /Examenes-UTN/alumnos_2/validar2.txt" p1c2_2024_A2
+sudo -su -c "whoami > /Examenes-UTN/alumnos_3/validar3.txt" p1c2_2024_A3
+sudo -su -c "whoami > /Examenes-UTN/profesores/validar4.txt" p1c2_2024_P1
+
