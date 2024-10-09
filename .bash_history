@@ -823,3 +823,50 @@ ls -l
 history -a
 cp $home/.bash_history /home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/
 cp /home/.bash_history /home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/
+cp $HOME/.bash_history /home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/
+ls 
+ls -la
+cd RTA_SCRIPT_Examen_20241005/
+vim Punto_B.sh 
+cd ..
+ls -la
+git status
+git add .bash_history 
+git commit -m "Historial"
+git push
+cd RTA_SCRIPT_Examen_20241005/
+bash Punto_B.sh 
+cd /Examenes-UTN/alumno_1/
+sudo cd /Examenes-UTN/alumno_1/
+sudo fdisk /dev/sdc
+cd /
+ls
+cd Examenes-UTN/alumno_1/
+sudo cd Examenes-UTN/alumno_1/
+cd Examenes-UTN/
+ls
+cd alumno_3/
+cd profesores/
+ls -la
+lsblk
+cd ..
+cd /home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/RTA_SCRIPT_Examen_20241005/
+cd ..
+git status
+cd RTA_ARCHIVOS_Examen_20241005/
+ls -la
+cd ..
+git add RTA_ARCHIVOS_Examen_20241005/
+git commit -m "Archivos examen"
+git push
+cd RTA_SCRIPT_Examen_20241005/
+git status
+git add validar.txt 
+git commit -m "Archivo validar"
+git push
+git status
+cd ..
+ls -la
+cp $HOME/.bash_history /home/vagrant/repogit/UTNFRA_SO_1P2C_2024_Moretti/
+ls -la
+history -a
